@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "inventra",
+  "cleanUrls": true,
+  "framework": null,
+  "buildCommand": "bash install-flutter.sh",
+  "outputDirectory": "build/web",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
