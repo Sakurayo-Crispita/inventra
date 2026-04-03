@@ -21,7 +21,7 @@ abstract final class AppConstants {
 
   // ─── GitHub & Despliegue ───
   static const String githubRepo = 'https://github.com/Sakurayo-Crispita/inventra';
-  static const String webPanelUrl = 'https://Sakurayo-Crispita.github.io/inventra/';
+  static const String webPanelUrl = 'https://inventra-opal.vercel.app';
   static const String androidDownloadUrl = '$githubRepo/releases/latest/download/app-release.apk';
   static const String windowsDownloadUrl = '$githubRepo/releases/latest/download/windows-release.zip';
 }

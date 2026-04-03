@@ -96,7 +96,19 @@ class _PlatformBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => launchUrl(Uri.parse(url)),
+      onTap: () async {
+        if (label == 'Panel Web') {
+          await launchUrl(Uri.parse(url));
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('La versión de $label estará disponible próximamente.'),
+              backgroundColor: AppColors.primary,
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        }
+      },
       borderRadius: AppRadius.borderRadiusMd,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
