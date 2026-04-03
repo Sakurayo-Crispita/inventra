@@ -68,7 +68,7 @@ class LandingHero extends StatelessWidget {
             SizedBox(
               width: isDesktop ? 600 : null,
               child: Text(
-                'La solución administrativa moderna e inteligente para gestionar productos, stock, equipos y movimientos con facilidad quirúrgica.',
+                'La solución administrativa moderna y avanzada para gestionar productos, stock, equipos y movimientos con precisión quirúrgica.',
                 textAlign: isDesktop ? TextAlign.center : TextAlign.left,
                 style: AppTextStyles.bodyLarge.copyWith(color: AppColors.textSecondary),
               ),
@@ -82,7 +82,7 @@ class LandingHero extends StatelessWidget {
               children: [
                 ElevatedButton.icon(
                   onPressed: () => launchUrl(Uri.parse(AppConstants.webPanelUrl)),
-                  icon: const Icon(Icons.rocket_launch_rounded),
+                  icon: const Icon(Icons.arrow_forward_rounded),
                   label: const Text('Comenzar Gratis'),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),

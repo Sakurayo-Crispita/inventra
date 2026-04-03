@@ -42,7 +42,7 @@ class LandingFeatures extends StatelessWidget {
               ),
               _FeatureCard(
                 icon: Icons.category_outlined,
-                title: 'Categorización Inteligente',
+                title: 'Categorización Avanzada',
                 desc: 'Organiza tu catálogo en categorías claras para un acceso más ágil y ordenado.',
               ),
               _FeatureCard(

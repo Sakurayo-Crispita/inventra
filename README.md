@@ -1,89 +1,57 @@
-# Inventra — Panel Administrativo & Gestión de Inventario
+# Proyecto: Inventra — Sistema de Gestión y Control de Inventarios
 
-![Inventra Banner](https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200)
+Inventra es una solución administrativa multiplataforma de alto rendimiento, orientada a la gestión precisa de activos, stock y flujos operativos en almacenes y negocios de escala media. Diseñada bajo una arquitectura robusta de capas, garantiza integridad de datos, escalabilidad y una experiencia de usuario optimizada para la productividad.
 
-**Inventra** es una solución multiplataforma moderna diseñada para el control quirúrgico de inventarios, productos y movimientos operativos. Construida con un enfoque en la escalabilidad, la velocidad y la experiencia de usuario premium.
+## Características Principales
 
----
+### Gestión de Catálogo y Activos
+- **Estructura de Categorías**: Organización jerárquica con control de estados lógicos para el filtrado eficiente de catálogos.
+- **Fichas de Producto**: Registro detallado de especificaciones técnicas, control de stock mínimo y trazabilidad de precios.
 
-## 🚀 Características del MVP
+### Control Operativo de Inventario
+- **Movimientos de Stock**: Registro de entradas y salidas con validación atómica para prevenir inconsistencias o stocks negativos.
+- **Auditoría y Trazabilidad**: Historial cronológico completo de cada alteración en los niveles de existencias por producto.
 
-### 📋 Gestión de Catálogo
-- **Categorías**: Organización jerárquica y estados activos/inactivos.
-- **Productos**: Fichas técnicas con stock mínimo, precios y asociación categorizada.
+### Administración de Personal y Seguridad
+- **Control de Acceso (RBAC)**: Roles definidos de Administrador, Supervisor y Operador con permisos granulares.
+- **Integridad de Datos (RLS)**: Implementación de Row Level Security (RLS) a nivel de base de datos para el aislamiento seguro de la información.
 
-### 📦 Control de Inventario
-- **Movimientos Atómicos**: Registro riguroso de entradas y salidas.
-- **Validación de Stock**: Protección a nivel de base de datos para evitar stocks negativos.
-- **Historial Completo**: Trazabilidad de cada cambio en el almacén.
+### Ecosistema Multiplataforma
+- **Consola de Administración**: Dashboard en tiempo real con KPIs operativos y monitoreo de actividad reciente.
+- **Acceso Multidispositivo**: Soporte nativo para plataformas Web, Windows y Android.
 
-### 👥 Administración de Usuarios
-- **Roles Base**: Administrador, Supervisor y Operador.
-- **Seguridad RLS**: Políticas de seguridad de nivel de fila (Row Level Security) en Supabase.
-- **Perfiles**: Saludos personalizados y gestión de estados de cuenta.
+## Arquitectura del Software
 
-### 🌐 Landing Web & Dashboard
-- **Landing Pública**: Presentación comercial responsive con acceso inteligente al panel.
-- **Dashboard en Tiempo Real**: KPIs críticos y actividad reciente al instante.
+El proyecto implementa una arquitectura "Feature-First", segregando la lógica de negocio, los datos y la presentación en módulos independientes:
 
----
+- **Presentation Layer**: Lógica de interfaz de usuario y manejo de estados visuales.
+- **Application Layer**: Orquestación de casos de uso y providers de estado reactivo.
+- **Domain Layer**: Definición de entidades puras, contratos y reglas de negocio.
+- **Data Layer**: Repositorios concretos e integración con el SDK de Supabase (PostgreSQL, Auth, Storage).
 
-## 🛠️ Stack Tecnológico
+## Especificaciones del Stack Tecnológico
 
-- **Frontend**: Flutter & Dart (v3.x)
-- **Estado**: Riverpod (AsyncNotifier, StateProvider)
-- **Navegación**: go_router
-- **Backend & DB**: Supabase (Auth, Storage, Realtime, Postgres)
-- **Arquitectura**: Feature-first (Domain, Data, Application, Presentation)
+- **Framework**: Flutter & Dart (v3.29.0+)
+- **Gestión de Estado**: Riverpod 2.x (AsyncNotifiers, StateProviders)
+- **Ruteo y Navegación**: go_router para gestión declarativa de rutas y Guards.
+- **Infraestructura**: Supabase (Autenticación, Almacenamiento, Tiempo Real, Base de datos Relacional).
 
----
+## Guía de Instalación y Despliegue
 
-## 🏗️ Arquitectura: Feature-First
-
-El proyecto sigue una estructura modular orientada a funcionalidades:
-
-```text
-lib/
-  core/           # Temas, Routing, Widgets globales y utilidades
-  features/       # Módulos independientes
-    auth/         # Login, registro y guardianes
-    inventory/    # Movimientos y stock
-    products/     # Catálogo de productos
-    users/        # Gestión de perfiles y roles
-    settings/     # Configuración del negocio
-    landing/      # Web pública de marketing
-```
-
-Cada *feature* se divide en capas:
-- **Presentation**: UI, widgets y estados visuales.
-- **Application**: Providers y lógica de casos de uso.
-- **Domain**: Entidades y reglas de negocio.
-- **Data**: Repositorios y fuentes de datos (Supabase).
-
----
-
-## 🏁 Instalación y Ejecución
-
-1. **Clonar repositorio**:
+1. **Prerrequisitos**: Poseer el SDK de Flutter instalado y configurado.
+2. **Obtención del Código**:
    ```bash
-   git clone https://github.com/tu-usuario/inventra.git
+   git clone https://github.com/Sakurayo-Crispita/inventra.git
+   cd inventra
    ```
-2. **Configurar Supabase**:
-   Asegúrate de tener las tablas de `profiles`, `categories`, `products`, `inventory_movements` y `settings` configuradas.
-3. **Ejecutar**:
+3. **Instalación de Dependencias**:
    ```bash
    flutter pub get
-   flutter run
+   ```
+4. **Ejecución del Entorno de Desarrollo**:
+   ```bash
+   flutter run -d [id-del-dispositivo]
    ```
 
 ---
-
-## 📸 Screenshots (MVP)
-
-> [Secciones reservadas para capturas de Dashboard, Inventario y Landing]
-
----
-
-## 📄 Licencia
-Este proyecto es un MVP desarrollado profesionalmente para fines operativos y de portafolio.
-© 2026 Inventra Team.
+© 2026 Inventra Software Group. Todos los derechos reservados.
