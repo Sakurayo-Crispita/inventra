@@ -18,4 +18,11 @@ abstract final class AppConstants {
   static const int maxProductNameLength = 100;
   static const int maxCategoryNameLength = 50;
   static const int maxDescriptionLength = 500;
+
+  // ─── GitHub & Despliegue ───
+  // NOTA: Reemplaza 'tu-usuario' con tu nombre real de GitHub una vez creado el repo.
+  static const String githubRepo = 'https://github.com/tu-usuario/inventra';
+  static const String webPanelUrl = 'https://tu-usuario.github.io/inventra/';
+  static const String androidDownloadUrl = '$githubRepo/releases/latest/download/app-release.apk';
+  static const String windowsDownloadUrl = '$githubRepo/releases/latest/download/windows-release.zip';
 }

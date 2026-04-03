@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/constants/app_constants.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
@@ -81,7 +81,7 @@ class LandingHero extends StatelessWidget {
               runSpacing: AppSpacing.md,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () => context.go(RoutePaths.login),
+                  onPressed: () => launchUrl(Uri.parse(AppConstants.webPanelUrl)),
                   icon: const Icon(Icons.rocket_launch_rounded),
                   label: const Text('Comenzar Gratis'),
                   style: ElevatedButton.styleFrom(
@@ -90,7 +90,7 @@ class LandingHero extends StatelessWidget {
                   ),
                 ),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => launchUrl(Uri.parse(AppConstants.webPanelUrl)),
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

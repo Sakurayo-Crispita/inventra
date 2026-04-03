@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/constants/app_constants.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
@@ -86,10 +85,9 @@ class _AccessButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final label = isAuthenticated ? 'Acceder al Panel' : 'Iniciar Sesión';
-    final destination = isAuthenticated ? RoutePaths.dashboard : RoutePaths.login;
 
     return ElevatedButton(
-      onPressed: () => context.go(destination),
+      onPressed: () => launchUrl(Uri.parse(AppConstants.webPanelUrl)),
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       ),

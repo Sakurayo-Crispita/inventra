@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/constants/app_constants.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_radius.dart';
 import '../../../../core/theme/app_spacing.dart';
@@ -56,10 +57,22 @@ class LandingShowcase extends StatelessWidget {
           Wrap(
             spacing: 20,
             runSpacing: 20,
-            children: const [
-              _PlatformBadge(icon: Icons.window_rounded, label: 'Windows (EXE)'),
-              _PlatformBadge(icon: Icons.android_rounded, label: 'Android (APK)'),
-              _PlatformBadge(icon: Icons.language_rounded, label: 'Panel Web'),
+            children: [
+              _PlatformBadge(
+                icon: Icons.window_rounded,
+                label: 'Windows (EXE)',
+                url: AppConstants.windowsDownloadUrl,
+              ),
+              _PlatformBadge(
+                icon: Icons.android_rounded,
+                label: 'Android (APK)',
+                url: AppConstants.androidDownloadUrl,
+              ),
+              _PlatformBadge(
+                icon: Icons.language_rounded,
+                label: 'Panel Web',
+                url: AppConstants.webPanelUrl,
+              ),
             ],
           ),
         ],
@@ -69,26 +82,36 @@ class LandingShowcase extends StatelessWidget {
 }
 
 class _PlatformBadge extends StatelessWidget {
-  const _PlatformBadge({required this.icon, required this.label}); // Removido super.key
+  const _PlatformBadge({
+    required this.icon,
+    required this.label,
+    required this.url,
+  });
+
   final IconData icon;
   final String label;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: AppRadius.borderRadiusMd,
-        border: Border.all(color: AppColors.surfaceBorder),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 24, color: AppColors.textSecondary),
-          const SizedBox(width: 12),
-          Text(label, style: AppTextStyles.bodyMedium),
-        ],
+    return InkWell(
+      onTap: () => launchUrl(Uri.parse(url)),
+      borderRadius: AppRadius.borderRadiusMd,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        decoration: BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: AppRadius.borderRadiusMd,
+          border: Border.all(color: AppColors.surfaceBorder),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 24, color: AppColors.textSecondary),
+            const SizedBox(width: 12),
+            Text(label, style: AppTextStyles.bodyMedium),
+          ],
+        ),
       ),
     );
   }
