@@ -1,57 +1,54 @@
-# Proyecto: Inventra — Sistema de Gestión y Control de Inventarios
+<p align="center">
+  <a href="https://github.com/Sakurayo-Crispita/inventra" target="blank"><img src="https://raw.githubusercontent.com/Sakurayo-Crispita/inventra/main/dise%C3%B1o_ux.png" width="200" alt="Inventra Logo" /></a>
+</p>
 
-Inventra es una solución administrativa multiplataforma de alto rendimiento, orientada a la gestión precisa de activos, stock y flujos operativos en almacenes y negocios de escala media. Diseñada bajo una arquitectura robusta de capas, garantiza integridad de datos, escalabilidad y una experiencia de usuario optimizada para la productividad.
+[comment]: <> (Badges opcionales)
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" alt="Flutter" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart" />
+</p>
 
-## Características Principales
+<p align="center">
+  <b>Inventra</b>: Solución multiplataforma para el control de inventarios y gestión administrativa.
+</p>
 
-### Gestión de Catálogo y Activos
-- **Estructura de Categorías**: Organización jerárquica con control de estados lógicos para el filtrado eficiente de catálogos.
-- **Fichas de Producto**: Registro detallado de especificaciones técnicas, control de stock mínimo y trazabilidad de precios.
+## Descripción
 
-### Control Operativo de Inventario
-- **Movimientos de Stock**: Registro de entradas y salidas con validación atómica para prevenir inconsistencias o stocks negativos.
-- **Auditoría y Trazabilidad**: Historial cronológico completo de cada alteración en los niveles de existencias por producto.
+Inventra es una herramienta administrativa de alto rendimiento diseñada para la gestión precisa de activos, stock y flujos operativos. Construida sobre Flutter y Supabase, permite un control total del negocio con sincronización en tiempo real.
 
-### Administración de Personal y Seguridad
-- **Control de Acceso (RBAC)**: Roles definidos de Administrador, Supervisor y Operador con permisos granulares.
-- **Integridad de Datos (RLS)**: Implementación de Row Level Security (RLS) a nivel de base de datos para el aislamiento seguro de la información.
+## Configuración del proyecto
 
-### Ecosistema Multiplataforma
-- **Consola de Administración**: Dashboard en tiempo real con KPIs operativos y monitoreo de actividad reciente.
-- **Acceso Multidispositivo**: Soporte nativo para plataformas Web, Windows y Android.
+```bash
+# instalar dependencias
+$ flutter pub get
+```
 
-## Arquitectura del Software
+## Ejecución
 
-El proyecto implementa una arquitectura "Feature-First", segregando la lógica de negocio, los datos y la presentación en módulos independientes:
+```bash
+# web
+$ flutter run -d chrome
 
-- **Presentation Layer**: Lógica de interfaz de usuario y manejo de estados visuales.
-- **Application Layer**: Orquestación de casos de uso y providers de estado reactivo.
-- **Domain Layer**: Definición de entidades puras, contratos y reglas de negocio.
-- **Data Layer**: Repositorios concretos e integración con el SDK de Supabase (PostgreSQL, Auth, Storage).
+# windows
+$ flutter run -d windows
 
-## Especificaciones del Stack Tecnológico
+# android
+$ flutter run -d android
+```
 
-- **Framework**: Flutter & Dart (v3.29.0+)
-- **Gestión de Estado**: Riverpod 2.x (AsyncNotifiers, StateProviders)
-- **Ruteo y Navegación**: go_router para gestión declarativa de rutas y Guards.
-- **Infraestructura**: Supabase (Autenticación, Almacenamiento, Tiempo Real, Base de datos Relacional).
+## Funcionalidades principales
 
-## Guía de Instalación y Despliegue
+- **Dashboard en tiempo real**: Visualización de KPIs críticos y actividad operativa al instante.
+- **Gestión avanzada de catálogo**: Control total de productos y categorías con estados lógicos.
+- **Movimientos de inventario**: Registro de entradas y salidas con validación atómica.
+- **Seguridad y roles**: Acceso controlado basado en roles (RBAC) con políticas de seguridad RLS.
 
-1. **Prerrequisitos**: Poseer el SDK de Flutter instalado y configurado.
-2. **Obtención del Código**:
-   ```bash
-   git clone https://github.com/Sakurayo-Crispita/inventra.git
-   cd inventra
-   ```
-3. **Instalación de Dependencias**:
-   ```bash
-   flutter pub get
-   ```
-4. **Ejecución del Entorno de Desarrollo**:
-   ```bash
-   flutter run -d [id-del-dispositivo]
-   ```
+## Plataformas soportadas
+
+- **Web**: Panel administrativo responsive.
+- **Desktop**: Aplicación nativa para Windows.
+- **Mobile**: Aplicación nativa para Android.
 
 ---
-© 2026 Inventra Software Group. Todos los derechos reservados.
+Inventra — Desarrollado con un enfoque en la escalabilidad y precisión.
