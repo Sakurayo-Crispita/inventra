@@ -2,7 +2,7 @@
 abstract final class AppConstants {
   static const String appName = 'Inventra';
   static const String appVersion = '1.0.0';
-  static const String appTagline = 'Gestión de inventario inteligente';
+  static const String appTagline = 'Gestión de inventario avanzada';
 
   // ─── Animaciones ───
   static const Duration animationFast = Duration(milliseconds: 200);
